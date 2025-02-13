@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1rrgain60rce"
-path="res://.godot/imported/duck_glasses_0.png-82ea6365dc051ddab2d449fc9dda5256.ctex"
+uid="uid://63s2th7wv0a7"
+path="res://.godot/imported/grass_0.png-5804ca2bd66a586485cdf480df635c8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/duck_glasses_0.png"
-dest_files=["res://.godot/imported/duck_glasses_0.png-82ea6365dc051ddab2d449fc9dda5256.ctex"]
+source_file="res://Assets/Tiles/grass_0.png"
+dest_files=["res://.godot/imported/grass_0.png-5804ca2bd66a586485cdf480df635c8d.ctex"]
 
 [params]
 

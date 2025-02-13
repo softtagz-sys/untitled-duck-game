@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsf5wknflhvsq"
-path="res://.godot/imported/duck_base.png-685754f6916bbbf578d2fdeb52b15244.ctex"
+uid="uid://bwd71vcppncyq"
+path="res://.godot/imported/guns.png-47e5cacb8ee423529cf1a63b4d8e369f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/duck_base.png"
-dest_files=["res://.godot/imported/duck_base.png-685754f6916bbbf578d2fdeb52b15244.ctex"]
+source_file="res://Assets/weapons/guns.png"
+dest_files=["res://.godot/imported/guns.png-47e5cacb8ee423529cf1a63b4d8e369f.ctex"]
 
 [params]
 

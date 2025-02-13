@@ -17,3 +17,5 @@ stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_0wms6")]
 position = Vector2(113, 102)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

@@ -1,27 +1,29 @@
 extends CharacterBody2D
 
-@export var speed = 150.0
-@export var sprintBonus = 100
+@export var speed: int = 200
+@export var sprint_bonus: int = 100
 
 var input: Vector2
 
-func get_input():
-	input.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	return input.normalized()
+func get_input() -> Vector2:
+	return Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
 
-func _process(delta: float) -> void:
-	var playerInput = get_input()
+func _process(_delta: float) -> void:
+	var player_input = get_input()
 	
-	if playerInput.x > 0:
+	# Flip sprite based on movement direction
+	if player_input.x > 0:
 		$Duck.scale.x = -1
-	if playerInput.x < 0:
+	elif player_input.x < 0:
 		$Duck.scale.x = 1
 
-	
+	# Adjust speed for sprinting
+	var current_speed = speed
 	if Input.is_action_pressed("sprint"):
-		position += playerInput * (speed + sprintBonus) * delta
-	else:
-		position += playerInput * speed * delta
-		
+		current_speed += sprint_bonus
 	
+	# Set velocity
+	velocity = player_input * current_speed
+
+	# Move the character
+	move_and_slide()
