@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpti38mgr4hl3"]
+[gd_scene load_steps=6 format=3 uid="uid://dpti38mgr4hl3"]
 
 [ext_resource type="PackedScene" uid="uid://gdu5bviuyxnt" path="res://Scenes/player.tscn" id="1_0wms6"]
 [ext_resource type="PackedScene" uid="uid://bc2vcme5fui2v" path="res://Scenes/enemy.tscn" id="2_f1cq7"]
+[ext_resource type="PackedScene" uid="uid://bkp33aqvumbit" path="res://Scenes/bullet.tscn" id="3_7rt1u"]
+[ext_resource type="Script" path="res://Scenes/bullet_manager.gd" id="3_388ak"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k8220"]
 load_path = "res://.godot/imported/grass_0.png-dd0cbcb0a2dd4ab13b3c46aaebcd6f89.ctex"
@@ -19,5 +21,11 @@ stretch_mode = 1
 [node name="Player" parent="." instance=ExtResource("1_0wms6")]
 position = Vector2(113, 102)
 
+[node name="BulletManager" type="Node2D" parent="."]
+script = ExtResource("3_388ak")
+bullet_scene = ExtResource("3_7rt1u")
+
 [node name="Enemy" parent="." instance=ExtResource("2_f1cq7")]
-position = Vector2(54, 104)
+position = Vector2(-46, 23)
+
+[connection signal="shoot" from="Player" to="BulletManager" method="_on_player_shoot"]

@@ -9,6 +9,12 @@ func _process(_delta: float) -> void:
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * SPEED
 		move_and_slide()
+		
+		if direction.x != 0:
+			$Duck.scale.x = 1 if direction.x < 0 else -1  # Flip if moving left
+	
+	
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):  # Ensure it's the player
