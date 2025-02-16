@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1rrgain60rce"
-path="res://.godot/imported/duck_glasses_0.png-a734bcdaed5b118e7930baee01b54594.ctex"
+uid="uid://cx6lgmx4eg2hd"
+path="res://.godot/imported/duck_vest_tan_0.png-eb77718555cca02d78c354423cae8155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ducks/duck gear/duck_glasses_0.png"
-dest_files=["res://.godot/imported/duck_glasses_0.png-a734bcdaed5b118e7930baee01b54594.ctex"]
+source_file="res://Assets/ducks/duck gear/vest/duck_vest_tan_0.png"
+dest_files=["res://.godot/imported/duck_vest_tan_0.png-eb77718555cca02d78c354423cae8155.ctex"]
 
 [params]
 

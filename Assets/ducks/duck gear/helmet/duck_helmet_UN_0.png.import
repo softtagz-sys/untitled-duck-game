@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bukbpqpbqi5ou"
-path="res://.godot/imported/duck_vest_UN_0.png-3c127beb73e08994b11b464c902c3f71.ctex"
+uid="uid://6ewyl63ux1v8"
+path="res://.godot/imported/duck_helmet_UN_0.png-2ef2b5c65d0f4c13c50718e91f4fae3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ducks/duck gear/duck_vest_UN_0.png"
-dest_files=["res://.godot/imported/duck_vest_UN_0.png-3c127beb73e08994b11b464c902c3f71.ctex"]
+source_file="res://Assets/ducks/duck gear/helmet/duck_helmet_UN_0.png"
+dest_files=["res://.godot/imported/duck_helmet_UN_0.png-2ef2b5c65d0f4c13c50718e91f4fae3f.ctex"]
 
 [params]
 
