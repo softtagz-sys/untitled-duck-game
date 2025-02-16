@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-signal shoot
-
 @export var speed: int = 200
 @export var sprint_bonus: int = 100
 var can_shoot = true
@@ -26,9 +24,8 @@ func _process(_delta: float) -> void:
 	# Move the character
 	move_and_slide()
 
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
-		var dir = get_global_mouse_position() - position	
-		shoot.emit($Duck/Gun/Nozzle.global_position, dir)
+	if Input.is_action_pressed("shoot") and can_shoot:
+		$Gun.shoot()
 		can_shoot = false
 		$shotTimer.start()
 
