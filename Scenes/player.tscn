@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://gdu5bviuyxnt"]
+[gd_scene load_steps=6 format=3 uid="uid://gdu5bviuyxnt"]
 
 [ext_resource type="Texture2D" uid="uid://bsf5wknflhvsq" path="res://Assets/ducks/duck/duck_base.png" id="1_0indg"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_13308"]
 [ext_resource type="Texture2D" uid="uid://b1rrgain60rce" path="res://Assets/ducks/duck_gear/duck_glasses_0.png" id="3_ostdh"]
 [ext_resource type="Texture2D" uid="uid://bcrii0ugh0dnu" path="res://Assets/ducks/duck_gear/duck_helmet_tan_0.png" id="4_40pd1"]
-[ext_resource type="Texture2D" uid="uid://bwd71vcppncyq" path="res://Assets/weapons/guns.png" id="5_il5n7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pk3k"]
 radius = 7.0
@@ -27,7 +26,7 @@ texture = ExtResource("3_ostdh")
 texture = ExtResource("4_40pd1")
 
 [node name="Gun" type="Sprite2D" parent="Duck"]
-texture = ExtResource("5_il5n7")
+flip_h = true
 region_enabled = true
 region_rect = Rect2(30, 20, 80, 80)
 
