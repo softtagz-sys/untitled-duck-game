@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://gdu5bviuyxnt" path="res://Scenes/player.tscn" id="1_0wms6"]
 [ext_resource type="PackedScene" uid="uid://bc2vcme5fui2v" path="res://Scenes/enemy.tscn" id="2_f1cq7"]
 [ext_resource type="PackedScene" uid="uid://bkp33aqvumbit" path="res://Scenes/bullet.tscn" id="3_7rt1u"]
-[ext_resource type="Script" path="res://Scenes/bullet_manager.gd" id="3_388ak"]
+[ext_resource type="Script" path="res://Scripts/bullet_manager.gd" id="3_388ak"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k8220"]
 load_path = "res://.godot/imported/grass_0.png-dd0cbcb0a2dd4ab13b3c46aaebcd6f89.ctex"

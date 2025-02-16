@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://gdu5bviuyxnt"]
+[gd_scene load_steps=7 format=3 uid="uid://gdu5bviuyxnt"]
 
 [ext_resource type="Texture2D" uid="uid://bsf5wknflhvsq" path="res://Assets/ducks/duck/duck_base.png" id="1_0indg"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_13308"]
 [ext_resource type="Texture2D" uid="uid://b1rrgain60rce" path="res://Assets/ducks/duck_gear/duck_glasses_0.png" id="3_ostdh"]
 [ext_resource type="Texture2D" uid="uid://bcrii0ugh0dnu" path="res://Assets/ducks/duck_gear/duck_helmet_tan_0.png" id="4_40pd1"]
+[ext_resource type="Texture2D" uid="uid://dsm7uregmwbcy" path="res://Assets/weapons/ColtSingleActionArmy.png" id="5_vfpna"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pk3k"]
 radius = 7.0
@@ -26,11 +27,16 @@ texture = ExtResource("3_ostdh")
 texture = ExtResource("4_40pd1")
 
 [node name="Gun" type="Sprite2D" parent="Duck"]
-flip_h = true
-region_enabled = true
-region_rect = Rect2(30, 20, 80, 80)
+position = Vector2(-5, 3)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_vfpna")
+
+[node name="Nozzle" type="Marker2D" parent="Duck/Gun"]
+position = Vector2(6, -2.002)
+scale = Vector2(1, 1.00089)
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_3pk3k")
 
 [node name="Camera" type="Camera2D" parent="."]

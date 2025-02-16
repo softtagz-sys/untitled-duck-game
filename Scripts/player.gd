@@ -25,10 +25,10 @@ func _process(_delta: float) -> void:
 
 	# Move the character
 	move_and_slide()
-	
+
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
-		var dir = get_global_mouse_position() - position
-		shoot.emit(position, dir)
+		var dir = get_global_mouse_position() - position	
+		shoot.emit($Duck/Gun/Nozzle.global_position, dir)
 		can_shoot = false
 		$shotTimer.start()
 
