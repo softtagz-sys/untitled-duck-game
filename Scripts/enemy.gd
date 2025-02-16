@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 @export var health: int = 50
 
 const SPEED : int = 50
@@ -27,6 +29,7 @@ func die():
 
 func hit(damage: int):
 	health -= damage
+	animation_player.play("flash")
 	if health <= 0:
 		die()
 

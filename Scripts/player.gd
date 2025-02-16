@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+@onready var duck: Node2D = $Duck
+@onready var gun: Node2D = $Gun
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var shot_timer: Timer = $shotTimer
+
 @export var speed: int = 200
 @export var sprint_bonus: int = 100
 var can_shoot = true
@@ -11,7 +16,7 @@ func _process(_delta: float) -> void:
 	var player_input = get_key_input()
 	
 	if player_input.x != 0:
-			$Duck.scale.x = 1 if player_input.x < 0 else -1
+			duck.scale.x = 1 if player_input.x < 0 else -1
 
 	# Adjust speed for sprinting
 	var current_speed = speed
@@ -25,9 +30,9 @@ func _process(_delta: float) -> void:
 	move_and_slide()
 
 	if Input.is_action_pressed("shoot") and can_shoot:
-		$Gun.shoot()
+		gun.shoot()
 		can_shoot = false
-		$shotTimer.start()
+		shot_timer.start()
 
 
 func _on_shot_timer_timeout() -> void:

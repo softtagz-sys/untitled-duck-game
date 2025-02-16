@@ -2,7 +2,7 @@ extends Node2D
 
 const BULLET = preload("res://Scenes/bullet.tscn")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	
 	rotation_degrees = wrap(rotation_degrees, 0, 360)
