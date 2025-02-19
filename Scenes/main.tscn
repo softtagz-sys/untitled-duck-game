@@ -20,7 +20,7 @@ stretch_mode = 1
 position = Vector2(113, 102)
 
 [node name="Enemy" parent="." instance=ExtResource("2_f1cq7")]
-position = Vector2(-46, 23)
+position = Vector2(-40, 11)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_f1cq7")]
 position = Vector2(-167, 117)

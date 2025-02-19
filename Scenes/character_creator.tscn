@@ -1,0 +1,259 @@
+[gd_scene load_steps=13 format=3 uid="uid://dmfktegpwkith"]
+
+[ext_resource type="Texture2D" uid="uid://bsf5wknflhvsq" path="res://Assets/ducks/duck/duck_base.png" id="1_p01yk"]
+[ext_resource type="Script" path="res://character_creator.gd" id="1_qydc0"]
+[ext_resource type="Texture2D" uid="uid://b1rrgain60rce" path="res://Assets/ducks/duck gear/glasses/duck_glasses_0.png" id="2_pmh7o"]
+[ext_resource type="Texture2D" uid="uid://bqdifevmbfl3b" path="res://Assets/ducks/duck gear/headset/duck_headset_0.png" id="3_6lvhw"]
+[ext_resource type="Texture2D" uid="uid://dm48nl62fxdwl" path="res://Assets/ducks/duck gear/helmet/duck_helmet_gray_0.png" id="4_i12u7"]
+[ext_resource type="Texture2D" uid="uid://bykfauo22wtl7" path="res://Assets/ducks/duck gear/vest/duck_vest_gray_0.png" id="5_e6lvp"]
+[ext_resource type="Script" path="res://Scripts/body_part.gd" id="7_6xh6i"]
+[ext_resource type="Texture2D" uid="uid://dpry8hby6c6dh" path="res://Assets/ui/UI_Flat_Frame01a.png" id="8_ka73l"]
+[ext_resource type="Texture2D" uid="uid://vb00x6lbr0ag" path="res://Assets/ui/UI_Flat_IconPlay01a.png" id="9_g76fb"]
+[ext_resource type="Texture2D" uid="uid://bw1lhlv47njk5" path="res://Assets/ui/UI_Flat_IconPlay01b.png" id="9_kf8uk"]
+[ext_resource type="FontFile" uid="uid://pm4g0e45vist" path="res://Assets/fonts/ARCADECLASSIC.TTF" id="10_ktmg8"]
+[ext_resource type="Texture2D" uid="uid://cli0tifed2mne" path="res://Assets/ui/UI_Flat_Button02a_1.png" id="12_kdmqi"]
+
+[node name="CharacterCreator" type="Node2D"]
+script = ExtResource("1_qydc0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 800.0
+offset_bottom = 850.0
+grow_vertical = 2
+texture = ExtResource("8_ka73l")
+
+[node name="Duck" type="Node2D" parent="NinePatchRect"]
+position = Vector2(350, 350)
+scale = Vector2(13, 13)
+
+[node name="Body" type="Node2D" parent="NinePatchRect/Duck"]
+script = ExtResource("7_6xh6i")
+collection_name = "bodies"
+next_button = NodePath("../../../Selector/Body/Button-next")
+prev_button = NodePath("../../../Selector/Body/Button-back")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/Duck/Body"]
+texture = ExtResource("1_p01yk")
+
+[node name="Glasses" type="Node2D" parent="NinePatchRect/Duck"]
+script = ExtResource("7_6xh6i")
+collection_name = "glasses"
+allow_none = true
+next_button = NodePath("../../../Selector/Glasses/Button-next")
+prev_button = NodePath("../../../Selector/Glasses/Button-back")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/Duck/Glasses"]
+texture = ExtResource("2_pmh7o")
+
+[node name="Headset" type="Node2D" parent="NinePatchRect/Duck"]
+script = ExtResource("7_6xh6i")
+collection_name = "headsets"
+allow_none = true
+next_button = NodePath("../../../Selector/Headset/Button-next")
+prev_button = NodePath("../../../Selector/Headset/Button-back")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/Duck/Headset"]
+texture = ExtResource("3_6lvhw")
+
+[node name="Helmet" type="Node2D" parent="NinePatchRect/Duck"]
+script = ExtResource("7_6xh6i")
+collection_name = "helmets"
+allow_none = true
+next_button = NodePath("../../../Selector/Helmet/Button-next")
+prev_button = NodePath("../../../Selector/Helmet/Button-back")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/Duck/Helmet"]
+texture = ExtResource("4_i12u7")
+
+[node name="Vest" type="Node2D" parent="NinePatchRect/Duck"]
+script = ExtResource("7_6xh6i")
+collection_name = "vests"
+allow_none = true
+next_button = NodePath("../../../Selector/Vest/Button-next")
+prev_button = NodePath("../../../Selector/Vest/Button-back")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/Duck/Vest"]
+texture = ExtResource("5_e6lvp")
+
+[node name="Selector" type="VBoxContainer" parent="."]
+offset_left = 1000.0
+offset_top = 175.0
+offset_right = 1153.0
+offset_bottom = 306.0
+scale = Vector2(5, 5)
+alignment = 1
+
+[node name="Body" type="HBoxContainer" parent="Selector"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button-back" type="Button" parent="Selector/Body"]
+layout_mode = 2
+size_flags_horizontal = 2
+action_mode = 0
+icon = ExtResource("9_kf8uk")
+flat = true
+
+[node name="Label" type="Label" parent="Selector/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("10_ktmg8")
+theme_override_font_sizes/font_size = 20
+text = "Body"
+
+[node name="Button-next" type="Button" parent="Selector/Body"]
+layout_mode = 2
+size_flags_horizontal = 10
+action_mode = 0
+icon = ExtResource("9_g76fb")
+flat = true
+
+[node name="Glasses" type="HBoxContainer" parent="Selector"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button-back" type="Button" parent="Selector/Glasses"]
+layout_mode = 2
+action_mode = 0
+icon = ExtResource("9_kf8uk")
+flat = true
+
+[node name="Label" type="Label" parent="Selector/Glasses"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_ktmg8")
+theme_override_font_sizes/font_size = 20
+text = "Glasses"
+
+[node name="Button-next" type="Button" parent="Selector/Glasses"]
+layout_mode = 2
+action_mode = 0
+icon = ExtResource("9_g76fb")
+flat = true
+
+[node name="Headset" type="HBoxContainer" parent="Selector"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button-back" type="Button" parent="Selector/Headset"]
+layout_mode = 2
+action_mode = 0
+icon = ExtResource("9_kf8uk")
+flat = true
+
+[node name="Label" type="Label" parent="Selector/Headset"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_ktmg8")
+theme_override_font_sizes/font_size = 20
+text = "Headset"
+
+[node name="Button-next" type="Button" parent="Selector/Headset"]
+layout_mode = 2
+action_mode = 0
+icon = ExtResource("9_g76fb")
+flat = true
+
+[node name="Helmet" type="HBoxContainer" parent="Selector"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button-back" type="Button" parent="Selector/Helmet"]
+layout_mode = 2
+size_flags_horizontal = 2
+action_mode = 0
+icon = ExtResource("9_kf8uk")
+flat = true
+
+[node name="Label" type="Label" parent="Selector/Helmet"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("10_ktmg8")
+theme_override_font_sizes/font_size = 20
+text = "Helmet"
+
+[node name="Button-next" type="Button" parent="Selector/Helmet"]
+layout_mode = 2
+size_flags_horizontal = 10
+action_mode = 0
+icon = ExtResource("9_g76fb")
+flat = true
+
+[node name="Vest" type="HBoxContainer" parent="Selector"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button-back" type="Button" parent="Selector/Vest"]
+layout_mode = 2
+size_flags_horizontal = 2
+action_mode = 0
+icon = ExtResource("9_kf8uk")
+flat = true
+
+[node name="Label" type="Label" parent="Selector/Vest"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_ktmg8")
+theme_override_font_sizes/font_size = 20
+text = "Vest"
+
+[node name="Button-next" type="Button" parent="Selector/Vest"]
+layout_mode = 2
+size_flags_horizontal = 10
+action_mode = 0
+icon = ExtResource("9_g76fb")
+flat = true
+
+[node name="Confirm" type="Button" parent="."]
+offset_left = 712.0
+offset_top = 940.0
+offset_right = 1212.0
+offset_bottom = 1040.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_ktmg8")
+theme_override_font_sizes/font_size = 50
+text = "Confirm"
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Confirm"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_kdmqi")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://gdu5bviuyxnt"]
+[gd_scene load_steps=14 format=3 uid="uid://gdu5bviuyxnt"]
 
 [ext_resource type="Texture2D" uid="uid://bsf5wknflhvsq" path="res://Assets/ducks/duck/duck_base.png" id="1_0indg"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_13308"]
 [ext_resource type="Shader" path="res://Shaders/flash.gdshader" id="2_o8tis"]
-[ext_resource type="Texture2D" uid="uid://b1rrgain60rce" path="res://Assets/ducks/duck_gear/duck_glasses_0.png" id="3_ostdh"]
-[ext_resource type="Texture2D" uid="uid://bcrii0ugh0dnu" path="res://Assets/ducks/duck_gear/duck_helmet_tan_0.png" id="4_40pd1"]
+[ext_resource type="Texture2D" uid="uid://b1rrgain60rce" path="res://Assets/ducks/duck gear/glasses/duck_glasses_0.png" id="4_ffbqp"]
+[ext_resource type="Texture2D" uid="uid://dfjsclp50aopc" path="res://Assets/ducks/duck gear/helmet/duck_helmet_tan_0.png" id="5_f7rfc"]
+[ext_resource type="Texture2D" uid="uid://bqdifevmbfl3b" path="res://Assets/ducks/duck gear/headset/duck_headset_0.png" id="5_wew78"]
 [ext_resource type="PackedScene" uid="uid://b4h382ipddslg" path="res://Scenes/gun.tscn" id="6_oultu"]
+[ext_resource type="Texture2D" uid="uid://cx6lgmx4eg2hd" path="res://Assets/ducks/duck gear/vest/duck_vest_tan_0.png" id="6_wcxnm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gtau8"]
 shader = ExtResource("2_o8tis")
@@ -65,10 +67,16 @@ material = SubResource("ShaderMaterial_gtau8")
 texture = ExtResource("1_0indg")
 
 [node name="Glasses" type="Sprite2D" parent="Duck"]
-texture = ExtResource("3_ostdh")
+texture = ExtResource("4_ffbqp")
+
+[node name="Headset" type="Sprite2D" parent="Duck"]
+texture = ExtResource("5_wew78")
 
 [node name="Helmet" type="Sprite2D" parent="Duck"]
-texture = ExtResource("4_40pd1")
+texture = ExtResource("5_f7rfc")
+
+[node name="Vest" type="Sprite2D" parent="Duck"]
+texture = ExtResource("6_wcxnm")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 visible = false
