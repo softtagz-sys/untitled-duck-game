@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dm48nl62fxdwl" path="res://Assets/ducks/duck gear/helmet/duck_helmet_gray_0.png" id="5_1hrlm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xsnxh"]
+resource_local_to_scene = true
 shader = ExtResource("2_0boe2")
 shader_parameter/active = false
 
